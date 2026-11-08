@@ -1,0 +1,58 @@
+# Everything is ignored unless its path is listed here.
+*
+
+!/.gitignore
+!/LICENSE
+!/README.md
+!/.claude-plugin/
+!/.claude-plugin/marketplace.json
+!/tests/
+!/tests/*.py
+
+# Layout shared by every skill.
+!/skills/
+!/skills/*/
+!/skills/*/README.md
+!/skills/*/SKILL.md
+!/skills/*/references/
+!/skills/*/references/*.md
+!/skills/*/scripts/
+!/skills/*/scripts/*.py
+!/skills/*/tests/
+!/skills/*/tests/*.py
+
+# packet-doctor only.
+!/skills/packet-doctor/packet_doctor/
+!/skills/packet-doctor/packet_doctor/*.py
+!/skills/packet-doctor/protocols/
+!/skills/packet-doctor/protocols/*/
+!/skills/packet-doctor/protocols/*/protocol.md
+!/skills/packet-doctor/evals/
+!/skills/packet-doctor/evals/evals.json
+!/skills/packet-doctor/evals/netlab/
+!/skills/packet-doctor/evals/netlab/*.py
+!/skills/packet-doctor/tests/fixtures/
+
+# Secrets, captured data and agent notes stay out even if a path above is widened later.
+CLAUDE.md
+CLAUDE.local.md
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+.netrc
+.npmrc
+secrets.*
+credentials.*
+*.pcap
+*.pcapng
+*.cap
+*.dmp
+
+# Exceptions to the names denied above.
+!/skills/packet-doctor/tests/fixtures/localhost-cert.pem
+!/skills/*/*/credentials.py

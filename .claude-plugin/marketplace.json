@@ -1,0 +1,37 @@
+{
+  "name": "doctor-skills",
+  "description": "Evidence-based diagnostic skills",
+  "owner": {
+    "name": "Taka-S-dev"
+  },
+  "plugins": [
+    {
+      "name": "packet-doctor",
+      "description": "Investigate network failures from packet captures",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/packet-doctor"
+      ],
+      "mcpServers": {
+        "packet-doctor-capture": {
+          "command": "python",
+          "args": [
+            "-B",
+            "${CLAUDE_PLUGIN_ROOT}/skills/packet-doctor/scripts/run.py",
+            "mcp"
+          ]
+        }
+      }
+    },
+    {
+      "name": "binary-doctor",
+      "description": "Investigate defects in saved binary files",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/binary-doctor"
+      ]
+    }
+  ]
+}
